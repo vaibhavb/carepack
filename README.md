@@ -10,6 +10,7 @@ TODO
 * Provide an out of the box administration and reporting system for organizations to manage Direct.
 * Provide a pluggable system so that different vendors like Identity Proofing providers, Certificate authorities etc. can interface with the system. Think of this as a marketplace enabled system.
 * Provide a data ingestion system which allows triggering messages on hospital ADT feeds.
+* Integrate with existing provider networks or messaging capabilities for e.g FAX.
 
 
 Technology Choices
