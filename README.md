@@ -4,8 +4,8 @@ Direct In A Box
 A complete opensource Direct HISP and a modern end user client which embodies Bluebutton+ and can be used out of the box.
 
 
-TODO
-----
+Goals
+-----
 * Provide an out of the box modern user interface to view and send Direct messages. The client should be extensible and be able to view bluebutton messages. The client should be build on a REST API which can be consumed by different systems.
 * Provide an out of the box administration and reporting system for organizations to manage Direct.
 * Provide a pluggable system so that different vendors like Identity Proofing providers, Certificate authorities etc. can interface with the system. Think of this as a marketplace enabled system.
@@ -23,3 +23,11 @@ Technology Choices
 Supported Systems
 -----------------
 * Deployable out of the box on Ubuntu
+
+
+Previous or Related Work
+------------------------
+* Direct Project - [Java Reference Implementation][]
+* Josh Mandel's BB+ Push [Sample][]
+* Displaying C-CDA File
+
