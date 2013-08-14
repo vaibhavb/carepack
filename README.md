@@ -1,7 +1,7 @@
 Direct In A Box
 ===============
 
-A complete opensource deployable Direct HISP and user interface client which can be used out of the box.
+A complete opensource Direct HISP and user interface client which works out of box with Bluebutton+ and can be used out of the box.
 
 
 TODO
