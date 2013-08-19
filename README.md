@@ -27,8 +27,8 @@ Supported Systems
 
 Previous or Related Work
 ------------------------
-* Direct Project - [Java Reference Implementation][http://wiki.directproject.org/Reference+Implementation+Workgroup].
-* Josh Mandel's BB+ Push [Sample][https://github.com/jmandel/bb-tutorial-growthtastic].
-* M. Jackson's [Visualization Framework] [https://github.com/blue-button/bbClear] for bluebutton files.
-* [Health Tiles] [https://github.com/blue-button/health-tiles]
+* Direct Project - [Java Reference Implementation](http://wiki.directproject.org/Reference+Implementation+Workgroup).
+* Josh Mandel's BB+ Push [Sample](https://github.com/jmandel/bb-tutorial-growthtastic).
+* M. Jackson's [Visualization Framework] (https://github.com/blue-button/bbClear) for bluebutton files.
+* [Health Tiles] (https://github.com/blue-button/health-tiles)
 
