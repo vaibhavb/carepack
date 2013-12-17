@@ -1,7 +1,7 @@
 Direct In A Box
 ===============
 
-A complete opensource Direct HISP and a modern end user client which embodies Bluebutton+ and can be used out of the box.
+A complete opensource Direct HISP and a modern end user client which embodies Bluebutton+, provides HL7 connectors and can be used and administered out of the box.
 
 
 Goals
@@ -16,7 +16,7 @@ Goals
 Technology Choices
 -------------------
 * The system will use Direct Java reference implementation which will be Shim'ed with REST APIs.
-* The user interface will be ruby on rails based. The data-store can be switched but initially will be Mongo.
+* The user interface will be ruby on rails based. The data-store can be switched but initially will be Postgres or Mongo.
 * The data ingestion system will use HL7 HAPI java library.
 
 
@@ -31,4 +31,3 @@ Previous or Related Work
 * Josh Mandel's BB+ Push [Sample](https://github.com/jmandel/bb-tutorial-growthtastic).
 * M. Jackson's [Visualization Framework] (https://github.com/blue-button/bbClear) for bluebutton files and various entries from  [healthdesign challenge](http://healthdesignchallenge.com)
 * [Health Tiles] (https://github.com/blue-button/health-tiles)
-
