@@ -25,9 +25,16 @@ Supported Systems
 * Deployable out of the box on Ubuntu
 
 
+Current Progress
+----------------
+* Integrated Josh's ansible direct installer
+* Sketch of the initial app 
+
+![screenshot](http://raw2.github.com/vaibhavb/directinabox/master/inbox-web-app/img/screenshot.png)
+
 Previous or Related Work
 ------------------------
 * Direct Project - [Java Reference Implementation](http://wiki.directproject.org/Reference+Implementation+Workgroup).
 * Josh Mandel's BB+ Push [Sample](https://github.com/jmandel/bb-tutorial-growthtastic).
-* M. Jackson's [Visualization Framework] (https://github.com/blue-button/bbClear) for bluebutton files and various entries from  [healthdesign challenge](http://healthdesignchallenge.com)
-* [Health Tiles] (https://github.com/blue-button/health-tiles)
+* M. Jackson's [Visualization Framework](https://github.com/blue-button/bbClear) for bluebutton files and various entries from  [healthdesign challenge](http://healthdesignchallenge.com)
+* [Health Tiles](https://github.com/blue-button/health-tiles)

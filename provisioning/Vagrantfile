@@ -1,0 +1,18 @@
+# Vagrant config
+# Vagrant is very useful for local development
+# Parts of this provisioning (sh, ansible) could be used for configuring servers
+# over-time it might make sense to pull & modify ansible yml files locally 
+# or even have an interactive script
+
+Vagrant::Config.run do |config|
+  config.vm.box       = 'raring'
+  config.vm.box_url   = 'http://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box'
+  config.vm.host_name = 'directinabox'
+
+  config.vm.forward_port 3000, 3000
+  config.vm.customize ["modifyvm", :id, "--memory", 1024]
+
+  #FIX: Fix Vagrant clean build for shell provisioning.
+  config.vm.provision :shell, :path => "builddev.sh"
+  config.vm.synced_folder "../", "/vagrant"
+end
