@@ -35,7 +35,17 @@ App.MailRoute = Em.Route.extend({
 
 // Handlebars helper
 Ember.Handlebars.registerBoundHelper('date', function(date) {
-  return moment(date).format('MMM Do');
+  return moment(date).format('MMM Do YYYY');
+});
+
+Ember.Handlebars.registerBoundHelper('excerpt', function(body) {
+  // return first hundred characters of the string
+  return new Handlebars.SafeString(body.substr(0, 50) + "...");
+});
+
+Ember.Handlebars.registerBoundHelper('initials', function(name) {
+  // return first hundred characters of the string
+  return new Handlebars.SafeString(name.substr(0, 2));
 });
 
 // Fixtures
@@ -46,11 +56,11 @@ App.FIXTURES = [
     messages: [
       {
         id: 1,
-        subject: "Welcome to DirectInABox may be a long text will strech the table how much can it greac reopenClass reopenClass reopenClass do that you think mr params",
+        subject: "Welcome to DirectInABox",
         from: "dr.tomster@direct.hospital.com",
         to: "user@direct.patientportal.com",
         date: new Date(),
-        body: "Welcome to Ember. We hope you enjoy your stay"
+        body: "Welcome to DirectInABox. We hope you enjoy your stay!"
       }, {
         id: 2,
         subject: "DirectInABox Resources",
