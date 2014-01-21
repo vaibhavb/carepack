@@ -3,10 +3,11 @@
 # install on a Linux (RHEL. Debian, Ubuntu) machines easily, currently support
 # 64-bit Ubuntu only (don't try on Amazon free tree 1GB is minimum RAM)
 # to install direct in a box do 
-# UBUNTU>curl http://bit.ly/install-directserver | sh
+# UBUNTU>wget -O- http://bit.ly/install-directserver | sh
 
 export DEBIAN_FRONTEND=noninteractive
 
+sudo apt-get update -qq
 sudo apt-get -y install git \
                    make \
                    python-yaml \
