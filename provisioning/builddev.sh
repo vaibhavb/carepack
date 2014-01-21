@@ -15,7 +15,7 @@ sudo apt-get -y install git \
                    python-paramiko \
                    software-properties-common
 
-INSTALL_TYPE = "Direct"
+INSTALL_TYPE="Direct"
 
 if [ "$INSTALL_TYPE" = "Direct"] ; then
 	# install ansible
@@ -40,7 +40,7 @@ if [ "$INSTALL_TYPE" = "Direct"] ; then
 	sudo ansible-playbook -c local -i hosts -v playbook.yml
 fi
 
-if [ "$INSTALL_TYPE" == "InboxApp_Only"]; then
+if [ "$INSTALL_TYPE" = "InboxApp_Only"]; then
 	# Install Node.js, ember.js
 	# Shortly, we will persist data in postgres via rails, and cache with Redis
 	
