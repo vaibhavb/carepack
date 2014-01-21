@@ -36,7 +36,7 @@ if [ "$INSTALL_TYPE" = "Direct" ] ; then
 	git clone https://github.com/jmandel/ansible-ccda
 	cd /tmp/ansible-ccda
 	# copy local settings TODO:make this interactive to get user input
-	cp /tmp/directinabox/provisioning/direct_server.yml settings/direct_server.yml
+	cp /tmp/directinabox/provisioning/direct_server.yml /tmp/ansible-ccda/settings/direct_server.yml
 	sudo ansible-playbook -c local -i hosts -v playbook.yml
 fi
 
