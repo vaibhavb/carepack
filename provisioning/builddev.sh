@@ -40,8 +40,7 @@ if [ "$INSTALL_TYPE" = "Direct" ] ; then
 	sudo ansible-playbook -c local -i hosts -v playbook.yml
 fi
 
-if [ "$INSTALL_TYPE" = "InboxApp_Only"]; then
+if [ "$INSTALL_TYPE" = "Inbox_AppOnly" ] ; then
 	# Install Node.js, ember.js
 	# Shortly, we will persist data in postgres via rails, and cache with Redis
-	
 fi
