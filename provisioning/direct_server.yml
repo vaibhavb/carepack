@@ -3,14 +3,14 @@
   # Domain name for this Direct server
   # (Secure e-mail will be to/from @direct_domain_name)
   # A best practice is to use "direct".yournormaldomain.tld
-  "direct_domain_name": "direct.growth.bluebuttonpl.us",
+  "direct_domain_name": "direct.test.vitraag.com",
 
   # Direct e-mail address of the postmaster for your Direct domain
   # A best practice is to use "postmaster"@direct_domain_name
-  "postmaster": "postmaster@direct.growth.bluebuttonpl.us",
+  "postmaster": "postmaster@direct.test.vitraag.com",
 
   # Name server for your direct_domain
-  "direct_name_server": "ns.direct.growth.bluebuttonpl.us",
+  "direct_name_server": "ns.direct.test.vitraag.com",
 
   # Where to POST C-CDAs that arrive attached to Direct email messages?
   # This is a URL template where
@@ -29,10 +29,10 @@
   # If you don't already have a certificate, fill in your details
   # below to generate a self-signed certificate for your Direct domain
   "certificate": {
-     "country": "US",
-     "state": "MA",
-     "city": "Boston",
-     "organization": "SMART Platforms"
+     "country": "Vitraag test",
+     "state": "WA",
+     "city": "Seattle",
+     "organization": "Direct In A Box Platforms"
    },
 
   # If you have an existing certificate, you can load it here
