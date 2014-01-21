@@ -17,7 +17,7 @@ sudo apt-get -y install git \
 
 INSTALL_TYPE="Direct"
 
-if [ "$INSTALL_TYPE" = "Direct"] ; then
+if [ "$INSTALL_TYPE" = "Direct"]; then
 	# install ansible
 	cd /tmp
 	git clone https://github.com/ansible/ansible.git
