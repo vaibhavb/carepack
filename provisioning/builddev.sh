@@ -12,7 +12,7 @@ sudo apt-get -y install git \
                    python-paramiko \
                    software-properties-common
 
-$INSTALL_TYPE = "InboxApp_Only"
+$INSTALL_TYPE = "Direct"
 
 if [ $INSTALL_TYPE = "Direct"]; then
 	# install ansible
