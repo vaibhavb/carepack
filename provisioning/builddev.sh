@@ -2,6 +2,8 @@
 # In addition to being used for Vagrant the goal of this script is to be able 
 # install on a Linux (RHEL. Debian, Ubuntu) machines easily, currently support
 # 64-bit Ubuntu only (don't try on Amazon free tree 1GB is minimum RAM)
+# to install direct in a box do 
+# UBUNTU>curl http://bit.ly/install-directserver | sh
 
 export DEBIAN_FRONTEND=noninteractive
 
@@ -23,12 +25,17 @@ if [ $INSTALL_TYPE = "Direct"]; then
 	sudo make install
 	cd /tmp
 	sudo rm -rf ansible
-
+	
+	cd /tmp
+	git clone https://github.com/vaibhavb/directinabox
+	
 	# install direct using josh's ansible playbook
 	# TODO: Make direct server multitenant (various certificates etc.)
 	cd /tmp
 	git clone https://github.com/jmandel/ansible-ccda
 	cd /tmp/ansible-ccda
+	# copy local settings TODO:make this interactive to get user input
+	cp /tmp/directinabox/provisioning/direct_server.yml settings/direct_server.yml
 	sudo ansible-playbook -c local -i hosts -v playbook.yml
 fi
 
