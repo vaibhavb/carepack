@@ -16,7 +16,7 @@ Goals
 Technology Choices
 -------------------
 * The system will use Direct Java reference implementation which will be Shim'ed with REST APIs.
-* The user interface will be ruby on rails based. The data-store can be switched but initially will be Postgres or Mongo.
+* The user interface will be ruby on rails based. The data-store can be switched but initially will be MongoDB based (soon Postgres will be added).
 * The data ingestion system will use HL7 HAPI java library.
 
 
