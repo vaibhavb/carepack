@@ -29,10 +29,10 @@
   # If you don't already have a certificate, fill in your details
   # below to generate a self-signed certificate for your Direct domain
   "certificate": {
-     "country": "Vitraag test",
+     "country": "US",
      "state": "WA",
      "city": "Seattle",
-     "organization": "Direct In A Box Platforms"
+     "organization": "DirectInABox"
    },
 
   # If you have an existing certificate, you can load it here
