@@ -3,7 +3,12 @@ Direct In A Box
 
 A complete opensource Direct HISP and a modern end user client which embodies Bluebutton+, provides HL7 connectors and can be used and administered out of the box.
 
-**On an Ubuntu machine, get started with** ```>wget -O- http://bit.ly/install-directserver | sh```. _Please report bugs_
+Get Started
+-----------
+**On a 64-bit Ubuntu machine, get started with** 
+```>wget -O- http://bit.ly/install-directserver | sh```. 
+_Please report bugs_. App and config instructions coming soon.
+
 
 Goals
 -----
