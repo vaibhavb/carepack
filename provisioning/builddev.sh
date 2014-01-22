@@ -43,4 +43,7 @@ fi
 if [ "$INSTALL_TYPE" = "Inbox_AppOnly" ] ; then
 	# Install Node.js, ember.js
 	# Shortly, we will persist data in postgres via rails, and cache with Redis
+	echo "done"
 fi
+
+echo "done!"
