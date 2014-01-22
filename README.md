@@ -12,7 +12,7 @@ _Please report bugs_. App and config instructions coming soon.
 
 Goals
 -----
-* Provide an out of the box modern user interface to view and send Direct messages. The client should be extensible and be able to view bluebutton messages. The client should be build on a REST API which can be consumed by different systems.
+* Provide an out of the box modern user interface to view and send Direct messages. The client (or apps) should be extensible and be able to view bluebutton messages. The client (or apps) should be build on a REST API which can be consumed by different systems.
 * Provide an out of the box administration and reporting system for organizations to manage Direct.
 * Provide a pluggable system so that different vendors like Identity Proofing providers, Certificate authorities etc. can interface with the system. Think of this as a marketplace enabled system.
 * Provide a data ingestion system which allows triggering messages on hospital ADT feeds.
@@ -46,3 +46,4 @@ Previous or Related Work
 * Josh Mandel's BB+ Push [Sample](https://github.com/jmandel/bb-tutorial-growthtastic).
 * M. Jackson's [Visualization Framework](https://github.com/blue-button/bbClear) for bluebutton files and various entries from  [healthdesign challenge](http://healthdesignchallenge.com)
 * [Health Tiles](https://github.com/blue-button/health-tiles)
+* [HIE of One](https://github.com/phoss/HIEofOne)
