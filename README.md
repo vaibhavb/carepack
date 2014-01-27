@@ -47,3 +47,4 @@ Previous or Related Work
 * M. Jackson's [Visualization Framework](https://github.com/blue-button/bbClear) for bluebutton files and various entries from  [healthdesign challenge](http://healthdesignchallenge.com)
 * [Health Tiles](https://github.com/blue-button/health-tiles)
 * [HIE of One](https://github.com/phoss/HIEofOne)
+* VIdentity's Open SSL based Certificate Authority [VCert](https://github.com/videntity/vcert)
