@@ -24,11 +24,6 @@ w.on("incoming", function(filename, message){
 
   var posts = [];
 
-  if (typeof message == 'undefined')
-  { 
-    return;
-  }
-
   message.to.forEach(function(to) {
    //TODO: Make this a config variable
    var url = template.parse("http://localhost:6080/api/messages").expand({
@@ -58,10 +53,11 @@ w.on("incoming", function(filename, message){
       }, function (error, response, body) {
         if (response && response.statusCode === 200){
           console.log("POSTed ", filename, response.statusCode);
+          console.log(callback);
           return callback();
         }
         return callback(error||response.statusCode);
-      });
+      })
     }, function(err){
     if (!err) {
       w.markComplete(filename);
@@ -133,4 +129,4 @@ w.on("incoming", function(filename, message){
     });
   }
 */
-});
+})

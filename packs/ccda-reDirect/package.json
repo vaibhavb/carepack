@@ -9,7 +9,7 @@
   "dependencies": {
     "mailparser": "*",
     "adm-zip": "*",
-    "watch": "*",
+    "watch": ">=0.8.1",
     "optimist": "*",
     "request": "*",
     "async": "*",
