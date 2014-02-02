@@ -15,9 +15,9 @@ sudo apt-get -y install git \
                    python-paramiko \
                    software-properties-common
 
-INSTALL_TYPE="Direct"
+INSTALL_TYPE="DirectPlusCarePacks"
 
-if [ "$INSTALL_TYPE" = "Direct" ] ; then
+if [ "$INSTALL_TYPE" = "DirectPlusCarePacks" ] ; then
 	# install ansible
 	cd /tmp
 	git clone https://github.com/ansible/ansible.git
@@ -38,6 +38,13 @@ if [ "$INSTALL_TYPE" = "Direct" ] ; then
 	# copy local settings TODO:make this interactive to get user input
 	cp /tmp/directinabox/provisioning/direct_server.yml /tmp/ansible-ccda/settings/direct_server.yml
 	sudo ansible-playbook -c local -i hosts -v playbook.yml
+
+	# install mongo
+
+	# install carepack
+
+	# install hieofone
+		
 fi
 
 if [ "$INSTALL_TYPE" = "Inbox_AppOnly" ] ; then

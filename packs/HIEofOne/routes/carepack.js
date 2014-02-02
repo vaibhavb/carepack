@@ -1,6 +1,6 @@
 var client = require("request");
 //TODO: Make this a config variable
-var carepack = "http://localhost:6080/api/messages?user=clement%40blue-scarf.smartplatforms.org"
+var carepack = "http://localhost:6080/api/messages?user=vaibhavb%40direct.test.vitraag.com"
 
 function getMessages(callback){
 

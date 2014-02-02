@@ -26,18 +26,7 @@ block content
                     span.line
                     | Status
               tbody
-                //row 
-                tr
-                  td
-                    | Feb 02, 2014
-                  td
-                    a(href=messages[0].from) 
-                      = messages[0].from
-                  td
-                    = messages[0].body
-                  td
-                    span.label.label-info Direct Message
-                //row 
+                //row
                 tr.first.active(onclick='location.href="/quoteReceived"')
                   td
                     | Jan 03, 2013
@@ -70,6 +59,19 @@ block content
                   td A request for blood work
                   td
                     span.label.label-success Completed
+                //row
+              each message, i in messages 
+                tr
+                  td
+                    | Feb 02, 2014
+                  td
+                    a(href=message.from) 
+                      = message.from
+                  td
+                    = message.body
+                  td
+                    span.label.label-info Direct Message
+                
         //end orders table 
     //end main container 
   script(src='http://code.jquery.com/jquery-latest.js')

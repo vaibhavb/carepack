@@ -38,7 +38,7 @@
   # If you have an existing certificate, you can load it here
   # instead of auto-generating a self-signed cert. Just point
   # to a PKCS12 (cert + private key) file as:
-  # "certificate_file": "/path/to/my-cert-with-key.p12"
+  "certificate_file": "/tmp/directinabox/certs/cert-with-key-package.p12"
 
   # Trust bundles to support, by default. For testing, use Test bundles.
   "trust_bundles": [{
