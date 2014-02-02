@@ -36,9 +36,9 @@ Current Progress
 * Integrated Josh's ansible direct installer
 * Sketches of the initial app 
 
-![screenshot](http://raw2.github.com/vaibhavb/directinabox/master/inbox-web-app/img/screenshot.png)
+![screenshot](http://raw2.github.com/vaibhavb/directinabox/master/apps/inbox-web-app/img/screenshot.png)
 
-![screenshot-threecol](http://raw2.github.com/vaibhavb/directinabox/master/inbox-web-app/img/screenshot-threecol.png)
+![screenshot-threecol](http://raw2.github.com/vaibhavb/directinabox/master/apps/inbox-web-app/img/screenshot-threecol.png)
 
 Previous or Related Work
 ------------------------
