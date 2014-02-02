@@ -1,0 +1,21 @@
+{
+  "name": "smart-ccda-redirect",
+  "version": "0.0.1",
+  "description": "Transfer C-CDA attachments from IMAP --> HTTP POST",
+  "author": "Josh Mandel <joshua.mandel@childrens.harvard.edu>",
+  "scripts":{
+    "start": "node ./launch.js"
+  },
+  "dependencies": {
+    "mailparser": "*",
+    "adm-zip": "*",
+    "watch": "*",
+    "optimist": "*",
+    "request": "*",
+    "async": "*",
+    "url-template": "*"
+  },
+  "devDependencies": {
+  },
+  "engine": "node >= 0.6.0"
+}

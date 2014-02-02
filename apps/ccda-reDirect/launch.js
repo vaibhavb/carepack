@@ -22,59 +22,38 @@ w = new Watcher({
 w.on("incoming", function(filename, message){
   console.log("incoming message", filename);
 
-  if (message.attachments){
+  var posts = [];
 
-var argv = require("optimist").argv;
-var request = require("request");
-var crypto = require('crypto');
-var async = require('async');
-var template = require('url-template');
-var AdmZip = require('adm-zip');
-var path = require('path');
+  if (typeof message == 'undefined')
+  { 
+    return;
+  }
 
-var sourceDir = argv.source_dir || process.env["SOURCE_DIR"];
-var progressDir = argv.progress_dir || process.env["PROGRESS_DIR"];
-var httpPostUrlTemplate = argv.ccda_post_url || process.env["CCDA_POST_URL"];
-var httpPostUrl = template.parse(httpPostUrlTemplate);
+  message.to.forEach(function(to) {
+   var url = template.parse("http://localhost:8080/api/messages").expand({
+        to: message.to[0].address});
 
-console.log(argv);
-Watcher = require("./watcher");
-
-w = new Watcher({
-  sourceDir: sourceDir,
-  progressDir: progressDir
-});
-
-w.on("incoming", function(filename, message){
-  console.log("incoming message", filename);
-
-  var posts = []
-
-  message.to.forEach(function(to)) {
-   var url = "http://localhost:8080/api/messages&user={{to}}".expand(
-      {
-        to: message.to[0].address
-      }
-    );
-   body = {
+   var content = {
       to: message.to[0].address,
       from: message.from[0].address,
       subject: message.subject,
-      body: message.body
+      body: message.text
     };
 
-   posts.push({url: url, body: body});
-  }
+   posts.push({url: url, content: content});
+  });
 
-  //All Messages out
+  //All Messages out, need to refactor to avoid callback hell
   console.log("Writing all messages: ", posts.length, " posts");
   async.each(posts, function(p, callback) {
     console.log("POSTing to ", p.url);
+    c = JSON.stringify(p.content);
+    console.log(c);
     request(
       { method: 'POST',
         url: p.url,
-        body: p.body,
-        headers: {"Content-type": "text/xml"}
+        body: c,
+        headers: {"Content-type": "application/json"}
       }, function (error, response, body) {
         if (response && response.statusCode === 200){
           console.log("POSTed ", filename, response.statusCode);
@@ -91,7 +70,7 @@ w.on("incoming", function(filename, message){
     }
   });
 
-
+/*
   if (message.attachments){
 
     var posts = [];
@@ -152,5 +131,5 @@ w.on("incoming", function(filename, message){
       }
     });
   }
+*/
 });
-                                                      

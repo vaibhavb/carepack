@@ -4,7 +4,7 @@ var express = require('express');
 var db = require('mongojs').connect('127.0.0.1:27017/carepack');
 
 function index(req, res, next){
-  res.send("API Schema in RAML - just kidding!")
+  res.send("API Schema in RAML - just kidding!");
 }
 
 function getMessages(req, res, next){

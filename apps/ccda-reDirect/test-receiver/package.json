@@ -1,0 +1,14 @@
+{
+  "name": "smart-reDirect-test-receiver",
+  "version": "0.0.1",
+  "author": "Josh Mandel <joshua.mandel@childrens.harvard.edu>",
+  "scripts":{
+    "start": "node ./launch.js"
+  },
+  "dependencies": {
+    "express": "*"
+  },
+  "devDependencies": {
+  },
+  "engine": "node >= 0.6.0"
+}
