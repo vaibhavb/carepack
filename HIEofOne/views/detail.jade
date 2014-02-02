@@ -1,0 +1,95 @@
+extends layout
+block header
+  link(href="/css/compiled/user-profile.css" rel="stylesheet")
+block content
+  .content
+    #pad-wrapper.user-profile
+      //header 
+      .row.header#docDetail
+        .col-md-12
+          ol.breadcrumb
+            li
+              a(href='/submitted') Inbox
+            li.active
+              a(href='#') Regarding your request for Vasectomy
+        .col-md-12
+          .col-md-8
+            img.avatar.img-circle(src='img/contact-profile.png')
+            h3.name Dr. John Smith
+            span.area Internal Medicine, M.D.
+          .col-md-4
+            .alert.alert-info
+              h6 Submit a request to your insurance provider to find out costs for your procedure. <br>
+              b Your Insurance Provider: <br>
+              span.area#insuranceId Anthem - Blue Cross Blue Shield <br> <br>
+              a.btn.btn-primary.btn-sm Submit to Insurance for Quote
+      
+      .row.profile#meta
+        .col-md-12
+          h4 Surgical Procedure 
+          br
+          table.table.table-hover
+              thead
+                tr
+                  th.col-md-3
+                    | Procedure Code
+                  th.col-md-9
+                    span.line
+                    | Procedure Name
+              tbody
+                //
+                   row 
+                tr.first
+                  td
+                    a(href='#') 55450
+                  td
+                    | Vasectomy - Ligation of Sperm Duct
+        // current prescriptions
+        .col-md-12#meds
+          h4 Your Current Prescriptions
+          br
+          table.table.table-hover
+              thead
+                tr
+                  th.col-md-3
+                    | Medication
+                  th.col-md-2
+                    span.line
+                    | Mode of Delivery
+                  th.col-md-3
+                    span.line
+                    | Quantity
+                  th.col-md-3
+                    span.line
+                    | Frequency
+              tbody
+                //
+                   row 
+                tr.first
+                  td
+                    a(href='#') XYZ
+                  td
+                    | Oral
+                  td
+                    | 3
+                  td
+                    | Daily
+                tr
+                  td
+                    a(href='#') ABC
+                  td
+                    | Oral
+                  td
+                    | 1
+                  td
+                    | As Needed
+                tr
+                  td
+                    a(href='#') DEF
+                  td
+                    | Oral
+                  td
+                    | 12 mL
+                  td
+                    | After Meal
+

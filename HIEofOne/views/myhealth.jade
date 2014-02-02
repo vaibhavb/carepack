@@ -1,0 +1,98 @@
+extends layout
+block header
+  link(href="/css/compiled/user-profile.css" rel="stylesheet")
+block content
+  .content
+    #pad-wrapper.user-profile
+      .row.header
+        .col-md-8
+          h3.name Adam Frankie
+          data.demographics().address.street 
+            #{data.demographics().address.city} #{data.demographics().address.street}, <br>
+            #{data.demographics().address.city} #{data.demographics().address.city}, 
+            #{data.demographics().address.city} #{data.demographics().address.state} - 
+            #{data.demographics().address.state} #{data.demographics().address.zip} <br>
+            #{data.demographics().phone.home} #{data.demographics().phone.home} <br>
+          
+
+      .row.profile
+        //
+           bio, new note & orders column 
+        .col-md-9.bio
+          .profile-box
+            // biography
+            h4 My Primary Care Provider
+            p#ccd-1= data.demographics().provider.organization
+
+            br
+            // insurance info
+            h4 My Insurance Information
+            p#ccd-2 Anthem - Blue Cross Blue Shield
+
+            br
+            // meds
+            h4 My Current Prescriptions
+            br
+            table.table.table-hover
+              thead
+                tr
+                  th.col-md-3
+                    | Medication
+                  th.col-md-3
+                    span.line
+                    | Mode of Delivery
+                  th.col-md-3
+                    span.line
+                    | Quantity
+                  th.col-md-3
+                    span.line
+                    | Frequency
+              tbody
+                //
+                   row 
+                tr.first
+                  td
+                    a(href='#') XYZ
+                  td
+                    | Oral
+                  td
+                    | 3
+                  td
+                    | Daily
+                tr
+                  td
+                    a(href='#') ABC
+                  td
+                    | Oral
+                  td
+                    | 1
+                  td
+                    | As Needed
+                tr
+                  td
+                    a(href='#') DEF
+                  td
+                    | Oral
+                  td
+                    | 12 mL
+                  td
+                    | After Meal
+        //
+           side address column 
+        .col-md-3.col-xs-12.address.pull-right
+          h6 Address
+          iframe(width='300', height='133', frameborder='0', scrolling='no', marginheight='0', marginwidth='0', src='https://maps.google.com.mx/?ie=UTF8&t=m&ll=19.715081,-155.071421&spn=0.010746,0.025749&z=14&output=embed')
+          //ul
+            //li= data.demographics().address.street 
+            //li #{data.demographics().address.city} #{data.demographics().address.country}
+            //li #{data.demographics().address.state} #{data.demographics().address.zip}
+            //li.ico-li
+             // i.ico-phone
+             // | #{data.demographics().phone.home}
+            //li.ico-li
+              //i.ico-mail
+              //a(href='#')=data.demographics().email
+
+      //pre=data.procedures().json()
+      //pre=data.medications().json()
+      //pre=data.demographics().json()

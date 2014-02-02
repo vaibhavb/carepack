@@ -1,0 +1,128 @@
+doctype html
+html
+  head
+    title Detail Admin - Tables showcase
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    //bootstrap 
+    link(href='/css/bootstrap/bootstrap.css', rel='stylesheet')
+    link(href='/css/bootstrap/bootstrap-overrides.css', type='text/css', rel='stylesheet')
+    //global styles 
+    link(rel='stylesheet', type='text/css', href='/css/compiled/layout.css')
+    link(rel='stylesheet', type='text/css', href='/css/compiled/elements.css')
+    link(rel='stylesheet', type='text/css', href='/css/compiled/icons.css')
+    //libraries 
+    link(href='/css/lib/font-awesome.css', type='text/css', rel='stylesheet')
+    //this page specific styles 
+    link(rel='stylesheet', href='/css/compiled/tables.css', type='text/css', media='screen')
+    //open sans font 
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800', rel='stylesheet', type='text/css')
+    //if lt IE 9 script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+    link(href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet")
+
+    title= title
+    block header
+  body
+    header.navbar.navbar-inverse(role='banner')
+      .navbar-header
+        button#menu-toggler.navbar-toggle(type='button', data-toggle='collapse')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='index.html')
+          img(src='/img/logo.png')
+      ul.nav.navbar-nav.pull-right.hidden-xs
+        li.hidden-xs.hidden-sm
+          input.search(type='text')
+        li.notification-dropdown.hidden-xs.hidden-sm
+          a.trigger(href='#')
+            i.icon-envelope
+            span.count 1
+          .pop-dialog
+            .pointer.right
+              .arrow
+              .arrow_border
+            .body
+              a.close-icon(href='#')
+                i.icon-remove-sign
+              .messages
+                a.item(href='#')
+                  img.display(src='/img/contact-img.png')
+                  .name Alejandra Galván
+                  .msg
+                    | There are many variations of available, but the majority have suffered alterations.
+                  span.time
+                    i.icon-time
+                    | 13 min.
+                a.item(href='#')
+                  img.display(src='/img/contact-img2.png')
+                  .name Alejandra Galván
+                  .msg
+                    | There are many variations of available, have suffered alterations.
+                  span.time
+                    i.icon-time
+                    | 26 min.
+                a.item.last(href='#')
+                  img.display(src='/img/contact-img.png')
+                  .name Alejandra Galván
+                  .msg
+                    | There are many variations of available, but the majority have suffered alterations.
+                  span.time
+                    i.icon-time
+                    | 48 min.
+                .footer
+                  a.logout(href='#') View all messages
+        li.dropdown
+          a.dropdown-toggle.hidden-xs.hidden-sm(href='#', data-toggle='dropdown')
+            | Your account
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href='personal-info.html') Personal info
+            li
+              a(href='#') Account settings
+            li
+              a(href='#') Billing
+            li
+              a(href='#') Export your data
+            li
+              a(href='#') Send feedback
+        li.settings.hidden-xs.hidden-sm
+          a(href='personal-info.html', role='button')
+            i.icon-cog
+        li.settings.hidden-xs.hidden-sm
+          a(href='signin.html', role='button')
+            i.icon-share-alt
+    //end navbar 
+    //sidebar 
+    #sidebar-nav
+      ul#dashboard-menu
+        li.active#inbox
+          a(href='/')
+            i.icon-envelope
+            span Inbox
+        li#myhealth
+          a(href='/myhealth')
+            i.icon-bar-chart
+            span My Clipboard
+        li
+          a(href='#')
+            i.icon-plus-sign
+            span Med Remind
+        li
+          a(href='#')
+            i.icon-calendar
+            span Appt Remind
+        li#myhealth
+          a(href='#')
+            i.icon-bolt
+            span Fitbit
+    block content
+script(src='http://code.jquery.com/jquery-2.0.3.min.js')
+script.
+  var url = window.location.pathname.split('/');
+  var section = url[1];
+  var indicator = '<div class="pointer"><div class="arrow"></div><div class="arrow_border"></div></div>';
+  section == '' && $('#inbox').addClass('active').append(indicator);
+  section == 'myhealth' && $('#myhealth').addClass('active').append(indicator);
