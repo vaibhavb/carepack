@@ -30,7 +30,8 @@ w.on("incoming", function(filename, message){
   }
 
   message.to.forEach(function(to) {
-   var url = template.parse("http://localhost:8080/api/messages").expand({
+   //TODO: Make this a config variable
+   var url = template.parse("http://localhost:6080/api/messages").expand({
         to: message.to[0].address});
 
    var content = {
