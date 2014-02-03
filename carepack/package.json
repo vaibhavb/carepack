@@ -1,9 +1,0 @@
-{
-  "name": "carepackage",
-  "main": "",
-  "version": "0.0.1",
-  "dependencies": {
-    "mongojs": "~0.10.0",
-    "express": "~3.4.8"
-  }
-}
