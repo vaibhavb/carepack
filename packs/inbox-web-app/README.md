@@ -8,6 +8,12 @@ Data
 ====
 Currently data is being fetched from Fixtures in app.js. This will come from rails.
 
+Todo
+====
+- [ ] Make an express app with data coming from CarePack API
+- [ ] Enable a mobile view
+- [ ] Add send support
+
 Tests
 =====
 This starter kit comes with an integration test sample, written for QUnit runner. 
