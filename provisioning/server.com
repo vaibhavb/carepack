@@ -36,7 +36,7 @@ server {
 server {
         listen 80;
 
-        server_name test.vitraag.com;
+        server_name patientpack.vitraag.com;
         access_log /var/log/nginx/patientpack.access.log;
         error_log /var/log/nginx/patientpack.error.log;
 
