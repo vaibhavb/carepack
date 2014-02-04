@@ -9,6 +9,7 @@ _Please report bugs_. App and config instructions coming soon.
 
 ## Work List
 
-  [ ] Make a shell only install
-  [ ] Create an overall config file for one-box install
-  [ ] Support other versions of Linux
+- [ ] Make a shell only install
+- [ ] Create an overall config file for one-box install
+- [ ] Support other versions of Linux
+- [ ] Use git encrypt to encryp the certificates
