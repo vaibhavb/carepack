@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/vaibhavb/directinabox.png?label=ready)](https://waffle.io/vaibhavb/directinabox)
 Direct In A Box
 ===============
 
