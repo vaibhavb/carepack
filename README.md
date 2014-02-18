@@ -49,3 +49,4 @@ Previous or Related Work
 * [Health Tiles](https://github.com/blue-button/health-tiles)
 * [HIE of One](https://github.com/phoss/HIEofOne)
 * VIdentity's Open SSL based Certificate Authority [VCert](https://github.com/videntity/vcert)
+* Personal Health Message Exchange [PHIX](https://github.com/amida-tech/PHIX)
