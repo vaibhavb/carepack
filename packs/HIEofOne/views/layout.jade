@@ -34,7 +34,7 @@ html
           img(src='/img/logo.png')
       ul.nav.navbar-nav.pull-right.hidden-xs
         li.hidden-xs.hidden-sm
-          input.search(type='text')
+          input.search(type='text').typeahead
         li.notification-dropdown.hidden-xs.hidden-sm
           a.trigger(href='#')
             i.icon-envelope
@@ -120,9 +120,54 @@ html
             span Fitbit
     block content
 script(src='http://code.jquery.com/jquery-2.0.3.min.js')
+script(src='/js/typeahead.bundle.js')
+script(src='/js/handlebars.js')
 script.
   var url = window.location.pathname.split('/');
   var section = url[1];
   var indicator = '<div class="pointer"><div class="arrow"></div><div class="arrow_border"></div></div>';
   section == '' && $('#inbox').addClass('active').append(indicator);
   section == 'myhealth' && $('#myhealth').addClass('active').append(indicator);
+
+  // instantiate the bloodhound suggestion engine
+  var doctors = new Bloodhound({   
+    datumTokenizer: function(d) {
+        return Bloodhound.tokenizers.whitespace(d.full_name); 
+      },
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    prefetch: {
+      url: "http://api.notonlydev.com/api/index.php?first_name=&last_name=Magid&org_name=&address=&state=&city_name=&zip=&taxonomy=&ident=&is_person=true&is_address=false&is_org=false&is_ident=false&format=json&apikey=reallySimpleKeyabc123",
+      filter: function(list) {
+        return $.map(list, function(country) 
+        {
+         return { 
+          full_name: country.first_name + ' ' + country.last_name, 
+          address: country.address,
+          city: country.city,
+          state: country.state,
+          fax: country.fax,
+          specialty: country.description
+         }; 
+        });
+      }
+    }
+  });
+   
+  // initialize the bloodhound suggestion engine
+  doctors.initialize();
+
+  // instantiate the typeahead UI
+  $('.typeahead').typeahead(null, {
+    displayKey: 'full_name',
+    source: doctors.ttAdapter(),
+    templates: {
+      suggestion: Handlebars.compile([
+          '<p class="search-fullname">{{full_name}}</p>',
+          '<p class="search-speciality">{{speciality}}</p>',
+          '<p class="search-fax">FAX: {{fax}}</p>',
+          '<div class="address"><p class="search-address">{{address}},&nbsp;</p>',
+          '<p class="search-city">{{city}},&nbsp;</p>',
+          '<p class="search-state">{{state}}.</p></div>',
+      ].join(''))
+    }
+  });
