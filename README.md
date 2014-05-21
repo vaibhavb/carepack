@@ -50,3 +50,4 @@ Previous or Related Work
 * [HIE of One](https://github.com/phoss/HIEofOne)
 * VIdentity's Open SSL based Certificate Authority [VCert](https://github.com/videntity/vcert)
 * Personal Health Message Exchange [PHIX](https://github.com/amida-tech/PHIX)
+* Health Graph [Visualization](http://www.hgraph.org)
