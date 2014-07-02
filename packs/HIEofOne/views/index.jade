@@ -1,6 +1,28 @@
 extends layout
 
 block content
+  div.modal.fade#myModal(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+    div.modal-dialog.modal-lg
+      div.modal-content
+        div.modal-header
+          button.close(data-dismiss="modal") 
+            span &times;
+          h4.modal-title#myModalLable Compose E-Mail
+        div.modal-body
+          form.form-horizontal
+            div.form-group
+              label.col-md-2.control-label(for="textinput") To
+              div.col-md-8
+                input.input-md.form-control#textinput(name="textinput" type="text" placeholder="e-mail address")
+                span.help-block To Direct address
+            div.form-group
+              label.col-md-2.control-label(for="textinput") Body
+              div.col-md-8
+                textarea.form-control#textarea(name="textarea")
+        div.modal-footer
+          button.btn.btn-default(data-dismiss="modal") Cancel
+          button.btn.btn-primary Send Message
+
   .content
     #pad-wrapper
         //orders table 
@@ -8,6 +30,8 @@ block content
           .row.head
             .col-md-12
               h4 Inbox
+              button.btn.btn-primary.btn-md(data-toggle="modal" data-target="#myModal") Compose
+
           .row.filter-block
           .row
             table.table.table-hover
