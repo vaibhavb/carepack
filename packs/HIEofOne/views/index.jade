@@ -1,8 +1,10 @@
 extends layout
+block header
+  link(href='/css/compiled/bootstrap-wysihtml5-0.0.2.css', rel='stylesheet')
 
 block content
-  div.modal.fade#myModal(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
-    div.modal-dialog.modal-lg
+  div.modal#myModal(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+    div.modal-dialog.modal-lg(style="width:75%")
       form.form-horizontal(action='/message',method='post')
         div.modal-content
           div.modal-header
@@ -11,14 +13,14 @@ block content
             h4.modal-title#myModalLable Compose E-Mail
           div.modal-body
               div.form-group
-                label.col-md-2.control-label(for="toEmail") To
+                label.col-md-1.control-label(for="toEmail") To
                 div.col-md-8
-                  input.input-md.form-control#textinput(name="toEmail" type="text" placeholder="e-mail address")
+                  input.input-md.form-control#textinput(name="toEmail" type="email" placeholder="e-mail address")
                   span.help-block To Direct address
               div.form-group
-                label.col-md-2.control-label(for="messageBody") Body
-                div.col-md-8
-                  textarea.form-control#textarea(name="messageBody")                
+                label.col-md-1.control-label(for="messageBody") Body
+                div.col-md-11
+                  textarea.form-control#textarea(name="messageBody", style="height:275px")                
           div.modal-footer
               button.btn.btn-default(data-dismiss="modal") Cancel
               input.btn.btn-primary(type='submit',value='Send Message',data-transition='fade')
@@ -32,9 +34,9 @@ block content
         //orders table 
         .table-wrapper.orders-table.section
           .row.head
-            .col-md-12
+            .col-lg-12
               h4 Inbox
-              button.btn.btn-primary.btn-md(data-toggle="modal" data-target="#myModal") Compose
+              button.btn.btn-primary.btn-md#myModalButton  Compose
 
           .row.filter-block
           .row
@@ -102,6 +104,19 @@ block content
                 
         //end orders table 
     //end main container 
-  script(src='http://code.jquery.com/jquery-latest.js')
-  script(src='/js/bootstrap.min.js')
-  script(src='/js/theme.js')
+
+block footer
+
+  script(src='/js/wysihtml5-0.3.0.js')
+  script(src='/js/bootstrap-wysihtml5-0.0.2.min.js')
+  script.
+    $('#myModalButton').click(function(e){
+        //BUGBUG: This needs to support toggle
+        $('#myModal').modal();
+        console.log("Loading the editor..");
+        $('#textarea').wysihtml5({
+           "color": false, //Button to change color of font
+           "size": 'xs' //Button size like sm, xs etc.
+        });
+    });
+
