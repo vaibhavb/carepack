@@ -3,28 +3,32 @@ extends layout
 block content
   div.modal.fade#myModal(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
     div.modal-dialog.modal-lg
-      div.modal-content
-        div.modal-header
-          button.close(data-dismiss="modal") 
-            span &times;
-          h4.modal-title#myModalLable Compose E-Mail
-        div.modal-body
-          form.form-horizontal
-            div.form-group
-              label.col-md-2.control-label(for="textinput") To
-              div.col-md-8
-                input.input-md.form-control#textinput(name="textinput" type="text" placeholder="e-mail address")
-                span.help-block To Direct address
-            div.form-group
-              label.col-md-2.control-label(for="textinput") Body
-              div.col-md-8
-                textarea.form-control#textarea(name="textarea")
-        div.modal-footer
-          button.btn.btn-default(data-dismiss="modal") Cancel
-          button.btn.btn-primary Send Message
+      form.form-horizontal(action='/message',method='post')
+        div.modal-content
+          div.modal-header
+            button.close(data-dismiss="modal") 
+              span &times;
+            h4.modal-title#myModalLable Compose E-Mail
+          div.modal-body
+              div.form-group
+                label.col-md-2.control-label(for="toEmail") To
+                div.col-md-8
+                  input.input-md.form-control#textinput(name="toEmail" type="text" placeholder="e-mail address")
+                  span.help-block To Direct address
+              div.form-group
+                label.col-md-2.control-label(for="messageBody") Body
+                div.col-md-8
+                  textarea.form-control#textarea(name="messageBody")                
+          div.modal-footer
+              button.btn.btn-default(data-dismiss="modal") Cancel
+              input.btn.btn-primary(type='submit',value='Send Message',data-transition='fade')
+          
 
   .content
     #pad-wrapper
+        if alert
+          .alert.alert-success
+            !=alert
         //orders table 
         .table-wrapper.orders-table.section
           .row.head

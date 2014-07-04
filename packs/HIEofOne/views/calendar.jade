@@ -1,0 +1,18 @@
+extends layout
+block header
+  link(href="/css/compiled/calendar.css" rel="stylesheet")
+  link(href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.0.2/fullcalendar.css" rel="stylesheet")
+block content
+  .content
+    #pad-wrapper
+      #calendar
+
+block footer
+  script(src='js/fullcalendar.min.js')
+  script.
+    $(document).ready(function() {
+      // page is now ready, initialize the calendar...
+      $('div#calendar').fullCalendar({
+          // put your options and callbacks here
+      })
+    });  

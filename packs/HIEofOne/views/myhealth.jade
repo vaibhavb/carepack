@@ -7,12 +7,12 @@ block content
       .row.header
         .col-md-8
           h3.name Adam Frankie
-          data.demographics().address.street 
-            #{data.demographics().address.city} #{data.demographics().address.street}, <br>
-            #{data.demographics().address.city} #{data.demographics().address.city}, 
-            #{data.demographics().address.city} #{data.demographics().address.state} - 
-            #{data.demographics().address.state} #{data.demographics().address.zip} <br>
-            #{data.demographics().phone.home} #{data.demographics().phone.home} <br>
+          data.demographics.address.street 
+            #{data.demographics.address.city} #{data.demographics.address.street}, <br>
+            #{data.demographics.address.city} #{data.demographics.address.city}, 
+            #{data.demographics.address.city} #{data.demographics.address.state} - 
+            #{data.demographics.address.state} #{data.demographics.address.zip} <br>
+            #{data.demographics.phone.home} #{data.demographics.phone.home} <br>
           
 
       .row.profile
@@ -22,7 +22,7 @@ block content
           .profile-box
             // biography
             h4 My Primary Care Provider
-            p#ccd-1= data.demographics().provider.organization
+            p#ccd-1= data.demographics.provider.organization
 
             br
             // insurance info
@@ -83,16 +83,16 @@ block content
           h6 Address
           iframe(width='300', height='133', frameborder='0', scrolling='no', marginheight='0', marginwidth='0', src='https://maps.google.com.mx/?ie=UTF8&t=m&ll=19.715081,-155.071421&spn=0.010746,0.025749&z=14&output=embed')
           //ul
-            //li= data.demographics().address.street 
-            //li #{data.demographics().address.city} #{data.demographics().address.country}
-            //li #{data.demographics().address.state} #{data.demographics().address.zip}
+            //li= data.demographics.address.street 
+            //li #{data.demographics.address.city} #{data.demographics.address.country}
+            //li #{data.demographics.address.state} #{data.demographics.address.zip}
             //li.ico-li
              // i.ico-phone
-             // | #{data.demographics().phone.home}
+             // | #{data.demographics.phone.home}
             //li.ico-li
               //i.ico-mail
-              //a(href='#')=data.demographics().email
+              //a(href='#')=data.demographics.email
 
       //pre=data.procedures().json()
       //pre=data.medications().json()
-      //pre=data.demographics().json()
+      //pre=data.demographics.json()

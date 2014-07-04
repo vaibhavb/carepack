@@ -1,7 +1,6 @@
 #calendar {
   width: 100%;
-  margin: 0 auto;
-  margin-top: -10px;
+  margin-top: 10px;
 }
 
 .calendar-wrapper {

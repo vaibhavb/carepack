@@ -1,8 +1,8 @@
 var fs = require('fs')
 var BlueButton = function (str){"{}"}/*require('../bb/bluebutton')*/
 var chc = require('../public/chc')
-var xml = fs.readFileSync('./bb/examples/CCD.sample.xml', 'utf-8');
-var bb = BlueButton(xml);
+var xml = fs.readFileSync('./bb/examples/CCD.samples.json', 'utf-8');
+var bb = JSON.parse(xml); //BlueButton(xml);
 var carepack = require('./carepack')
 
 /*
@@ -38,3 +38,8 @@ exports.myhealth = function(req, res){
 exports.price = function(req, res){
 	res.render('price', { data: chc });
 };
+
+exports.calendar = function(req, res){
+  res.render('calendar', {title: 'Calendar'})
+};
+
