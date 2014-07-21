@@ -20,6 +20,7 @@ exports.index = function(req, res){
 
 // TODO: Fix the ugly carepack client
 exports.sendemail = function(req, res){
+  console.log(req.body)
   carepack.sendEmail(function(message){
     console.log(message)
     res.render('index', 

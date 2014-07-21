@@ -48,6 +48,7 @@ function sendEmail(req, res, next){
   transporter.sendMail(email, function(err, result){
       if(err){ console.log(err); }
   });
+  console.log("Sending email...")
   res.send('Done')
 }
 

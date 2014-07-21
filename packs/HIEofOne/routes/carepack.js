@@ -19,7 +19,6 @@ function getMessages(callback){
 function sendEmail(callback){
   client(carepacksendemail, function (error, response, body) {
       if (!error && response && response.statusCode == 200){
-        console.log("Got Messages ", body);
         return callback(body);
       }
       console.log('Oops! there was an error:' + error)
