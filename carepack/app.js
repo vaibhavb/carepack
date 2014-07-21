@@ -1,12 +1,15 @@
 
 var nodemailer = require("nodemailer");
-var transporter = nodemailer.createTransport({
-  service: 'SES',
+var transporter = nodemailer.createTransport(smtpTransport({
+  host: 'localhost',
+  port: 25,
   auth: {
-    user: 'AKIAJGE46AQNT3OLVEKQ',
-    pass: 'ApByTRSn96gtSPCHDBRY0OQD7lUCiCSkNkwF5xqsLDja'
-  }
-});
+    user: 'catchall',
+    pass: 'password'
+  },
+  maxConnections: 5,
+  maxMessages: 10
+)});
 var express = require('express');
 var db = require('mongojs').connect('127.0.0.1:27017/carepack');
 
