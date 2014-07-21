@@ -4,7 +4,7 @@ var smtpTransport = require('nodemailer-smtp-transport');
 var transporter = nodemailer.createTransport(smtpTransport({
   host: 'localhost',
   port: 465,
-  secure: true,
+  secure: false,
   auth: {
     user: 'catchall',
     pass: 'password'
