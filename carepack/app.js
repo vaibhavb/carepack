@@ -3,7 +3,8 @@ var nodemailer = require("nodemailer");
 var smtpTransport = require('nodemailer-smtp-transport');
 var transporter = nodemailer.createTransport(smtpTransport({
   host: 'localhost',
-  port: 25,
+  port: 465,
+  secure: true,
   auth: {
     user: 'catchall',
     pass: 'password'
@@ -44,8 +45,8 @@ function testRespond(req, res, next) {
 
 function sendEmail(req, res, next){
   email = {
-    to : "vaibhavb@vitraag.com",
-    from : "vaibhavb@gmail.com",
+    to : "vaibhav.bhandari@direct.healthvault-ppe.com",
+    from : "vaibhavb@direct.test.vitraag.com",
     subject : "nodemailer test email",
     text : "hello this a test email from the nodemailer"
   }
