@@ -2,7 +2,7 @@
 var nodemailer = require("nodemailer");
 var smtpTransport = require('nodemailer-smtp-transport');
 var transporter = nodemailer.createTransport(smtpTransport({
-  host: 'localhost',
+  host: 'direct.test.vitraag.com',
   port: 465,
   secure: false,
   auth: {
