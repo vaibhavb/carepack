@@ -1,0 +1,54 @@
+<Doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarePack Developer Documentation</title>
+    <link rel="stylesheet" type="text/css" href="//documentup.com/stylesheets/screen.css">
+        <!-- Typekit -->
+    <script type="text/javascript">
+        (function() {
+          var config = {
+            kitId: 'hjp0pft',
+            scriptTimeout: 3000
+          };
+          var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/( |^)wf-loading( |$)/g,"");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script");tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(a&&a!="complete"&&a!="loaded")return;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+        })();
+    </script>
+</head>
+<body>
+
+<div id="container">
+  <div id="nav">
+    <div id="header">
+      <a href="/" id="logo">CarePack</a>
+    </div>
+    <ul id="sections">
+    </ul>
+  </div>
+
+  <div id="content">
+    <p>More coming soon .. </p>  
+  </div>
+</div>
+
+<script src="//code.jquery.com/jquery-2.0.0.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.js"></script>
+
+<script type="text/javascript">
+  $.get("developer.md", function(data){
+    var renderer = new marked.Renderer();
+    renderer.heading = function(text, level){
+        var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
+        if (level === 2) {
+          $('#sections').append("<li><a href=#"+escapedText +">"+text+"</a></li>")
+        }
+        return '<h' + level + ' id='+escapedText+'>' +
+                  text + '</h' + level + '>';
+    };
+    $("#content").html(marked(data, {renderer:renderer}));
+  })
+</script>
+</body>
+</html>
