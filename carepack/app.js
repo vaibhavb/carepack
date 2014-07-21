@@ -1,5 +1,12 @@
 
-
+var nodemailer = require("nodemailer");
+var transporter = nodemailer.createTransport({
+  service: 'SES',
+  auth: {
+    user: 'AKIAJGE46AQNT3OLVEKQ',
+    pass: 'ApByTRSn96gtSPCHDBRY0OQD7lUCiCSkNkwF5xqsLDja'
+  }
+});
 var express = require('express');
 var db = require('mongojs').connect('127.0.0.1:27017/carepack');
 
@@ -31,6 +38,19 @@ function testRespond(req, res, next) {
   res.send('hello ' + req.params.name);
 }
 
+function sendEmail(req, res, next){
+  email = {
+    to : "vaibhavb@gmail.com",
+    from : "vaibhavb@gmail.com",
+    subject : "nodemailer test email",
+    text : "hello this a test email from the nodemailer"
+  }
+  transporter.sendMail(email, function(err, result){
+      if(err){ console.log(err); }
+  });
+  res.send('Done')
+}
+
 var apiserver = express();
 // config 
 apiserver.use(express.json());
@@ -42,6 +62,7 @@ apiserver.get('/api', index)
 
 apiserver.post('/api/messages', postMessages);
 apiserver.get('/api/messages', getMessages);
+apiserver.get('/api/sendemail', sendEmail);
 
 apiserver.get('/hello/:name', testRespond);
 apiserver.head('/hello/:name', testRespond);
