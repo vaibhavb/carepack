@@ -35,11 +35,7 @@ Supported Systems
 Current Progress
 ----------------
 * Integrated Josh's ansible direct installer
-* Sketches of the initial app 
-
-![screenshot](http://raw2.github.com/vaibhavb/directinabox/master/packs/inbox-web-app/img/screenshot.png)
-
-![screenshot-threecol](http://raw2.github.com/vaibhavb/directinabox/master/packs/inbox-web-app/img/screenshot-threecol.png)
+* Initial work available [here](http://carepack.vitraag.com)
 
 Previous or Related Work
 ------------------------

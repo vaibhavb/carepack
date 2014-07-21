@@ -40,7 +40,7 @@ function testRespond(req, res, next) {
 
 function sendEmail(req, res, next){
   email = {
-    to : "vaibhavb@gmail.com",
+    to : "vaibhavb@vitraag.com",
     from : "vaibhavb@gmail.com",
     subject : "nodemailer test email",
     text : "hello this a test email from the nodemailer"
