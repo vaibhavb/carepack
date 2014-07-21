@@ -37,10 +37,7 @@ app.get('/users', user.list);
 app.get('/myhealth', routes.myhealth);
 app.get('/calendar', routes.calendar);
 app.get('/price', routes.price);
-app.post('/message', function(req,res){
-  console.log(req.body);
-  res.render('index', { title: 'Message Sent', alert: "Message Sent Successfully!", messages: []});
-})
+app.post('/message', routes.sendemail)
 //app.get('/twilio/new_message', twilio.new_message);
 
 http.createServer(app).listen(app.get('port'), function(){

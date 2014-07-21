@@ -18,6 +18,15 @@ exports.index = function(req, res){
 
 };
 
+// TODO: Fix the ugly carepack client
+exports.sendemail = function(req, res){
+  carepack.sendEmail(function(message){
+    console.log(message)
+    res.render('index', 
+      { title: 'Message Sent', alert: "Message Sent Successfully!", messages: []});
+  });
+};
+
 exports.submitted = function(req, res){
   res.render('submitted', { title: 'List' });
 };
