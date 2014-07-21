@@ -45,7 +45,7 @@ function testRespond(req, res, next) {
 
 function sendEmail(req, res, next){
   email = {
-    to : "vaibhav.bhandari@direct.healthvault-ppe.com",
+    to : "provider1@direct.sitenv.org",
     from : "vaibhavb@direct.test.vitraag.com",
     subject : "nodemailer test email",
     text : "hello this a test email from the nodemailer"
