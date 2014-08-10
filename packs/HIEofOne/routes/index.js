@@ -53,3 +53,6 @@ exports.calendar = function(req, res){
   res.render('calendar', {title: 'Calendar'})
 };
 
+exports.start = function(req, res){
+  res.render('start', {title: 'Setup page for CarePack'})
+}

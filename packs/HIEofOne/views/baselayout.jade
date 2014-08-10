@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    //bootstrap 
+    link(href='/css/bootstrap/bootstrap.css', rel='stylesheet')
+    link(href='/css/bootstrap/bootstrap-overrides.css', type='text/css', rel='stylesheet')
+    //global styles 
+    link(rel='stylesheet', type='text/css', href='/css/compiled/layout.css')    
+    
+    title= title
+    block header
+  body
+    header.navbar.navbar-inverse(role='banner')
+       .navbar-header
+           a.navbar-brand
+               img(src='/img/logo.png')
+    #sidebar-nav
+    block content
+    script(src='http://code.jquery.com/jquery-2.0.3.min.js')
+    script(src='/js/bootstrap.min.js')
+    block footer

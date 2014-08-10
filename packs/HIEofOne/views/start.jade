@@ -1,0 +1,20 @@
+extends baselayout
+
+mixin formelement(name, variable)
+  .form-group
+    label.col-md-2.control-label(for=variable)=name
+    .col-md-4
+      input.input-md.form-control#textinput(name=variable, type="text", placeholder=name)
+
+block content
+  .content
+    #pad-wrapper
+      h2.col-md-offset-1 Get Started With CarePack!
+      br
+      form.form-horizontal(action='/setup', method='post')
+        +formelement('First Name', 'toFirstName')
+        +formelement('Last Name', 'toLastName')
+        +formelement('E-Mail', 'toEmail')
+        +formelement('Organization', 'toOrganization')
+        +formelement('Organization Address', 'toOrgAddress')
+        input.col-md-offset-3.btn.btn-primary(type='Submit', value='Setup User & Organization')

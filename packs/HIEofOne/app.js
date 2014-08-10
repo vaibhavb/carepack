@@ -38,6 +38,7 @@ app.get('/myhealth', routes.myhealth);
 app.get('/calendar', routes.calendar);
 app.get('/price', routes.price);
 app.post('/message', routes.sendemail)
+app.get('/start', routes.start);
 //app.get('/twilio/new_message', twilio.new_message);
 
 http.createServer(app).listen(app.get('port'), function(){
