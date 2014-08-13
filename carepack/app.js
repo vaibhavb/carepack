@@ -13,30 +13,23 @@ var transporter = nodemailer.createTransport(smtpTransport({
   maxMessages: 10
 }));
 var express = require('express');
-var db = require('mongojs').connect('127.0.0.1:27017/carepack');
+var mongoose = require('mongoose');
+
+var connect = function(){
+  var options = { server: { socketOptions: { keepAlive: 1 } } }
+  mongoose.connect('mongodb://localhost/carepack')
+}
+connect();
+
+/* Following keeps sanity in case you start seeing connection drops */
+var db = mongoose.connection;
+db.on('error', console.error);
+db.once('disconnected', function(){
+  connect();
+})
 
 function index(req, res, next){
   res.send("API Schema in RAML - just kidding!");
-}
-
-function getMessages(req, res, next){
-
-  messages = db.collection('messages');
-  messages.find({"to": req.query.user}, function(err, msg) {
-    console.log("Get Message for: " + req.query.user)
-    res.send(msg);
-  });
-}
-
-function postMessages(req, res)
-{
-  var message;
-  console.log('POST message:');
-  console.log(req.body);
-  message = req.body;
-  messages = db.collection('messages');
-  d = messages.insert(message);
-  res.send(d)
 }
 
 function testRespond(req, res, next) {
@@ -66,13 +59,15 @@ apiserver.use(apiserver.router)
 /* APIs */
 apiserver.get('/api', index)
 
-apiserver.post('/api/messages', postMessages);
-apiserver.get('/api/messages', getMessages);
+var messageapi = require('./controllers/messages.js')
+var userapi = require('./controllers/users.js')
+
+apiserver.post('/api/messages', messageapi.post);
+apiserver.get('/api/messages', messageapi.list);
+apiserver.post('/api/users', userapi.create);
+
+/* email sending */
 apiserver.get('/api/sendemail', sendEmail);
-
-apiserver.get('/hello/:name', testRespond);
-apiserver.head('/hello/:name', testRespond);
-
 
 
 /* Start Server */

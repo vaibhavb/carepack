@@ -1,20 +1,23 @@
 extends baselayout
 
-mixin formelement(name, variable)
+mixin formelement(name, variable, type)
   .form-group
     label.col-md-2.control-label(for=variable)=name
     .col-md-4
-      input.input-md.form-control#textinput(name=variable, type="text", placeholder=name)
+      input.input-md.form-control#textinput(name=variable, type=type, placeholder=name)
 
 block content
   .content
     #pad-wrapper
       h2.col-md-offset-1 Get Started With CarePack!
       br
-      form.form-horizontal(action='/setup', method='post')
-        +formelement('First Name', 'toFirstName')
-        +formelement('Last Name', 'toLastName')
-        +formelement('E-Mail', 'toEmail')
-        +formelement('Organization', 'toOrganization')
-        +formelement('Organization Address', 'toOrgAddress')
+      form.form-horizontal(action='/createuser', method='post')
+        +formelement('First Name', 'firstname', 'text')
+        +formelement('Last Name', 'lastname', 'text')
+        +formelement('E-Mail', 'email', 'email')
+        +formelement('Organization', 'organization', 'text')
+        +formelement('Organization Address', 'organizationAddress', 'text')
+        +formelement('Organization City', 'organizationCity', 'text')
+        +formelement('Organization State', 'organizationState', 'text')
+        +formelement('Organization Zip', 'organizationZip', 'text')
         input.col-md-offset-3.btn.btn-primary(type='Submit', value='Setup User & Organization')

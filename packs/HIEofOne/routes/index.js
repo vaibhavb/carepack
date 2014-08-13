@@ -56,3 +56,10 @@ exports.calendar = function(req, res){
 exports.start = function(req, res){
   res.render('start', {title: 'Setup page for CarePack'})
 }
+
+exports.createuser = function(req, res){
+  carepack.createUser(req, res, function(message){
+    console.log(message)
+    res.render('index', {title:'Welcome', alert:'A User created', messages:[]});
+  })
+}
