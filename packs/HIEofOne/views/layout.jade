@@ -74,7 +74,7 @@ html
                   a.logout(href='#') View all messages
         li.dropdown
           a.dropdown-toggle.hidden-xs.hidden-sm(href='#', data-toggle='dropdown')
-            | John G.
+            | #{session.user.firstname}
             b.caret
           ul.dropdown-menu
             li

@@ -19,8 +19,19 @@ app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
-app.use(express.cookieParser('your secret here'));
-app.use(express.session());
+app.use(express.cookieParser('s3cr3t'));
+app.use(function(req, res, next){
+  req.session = req.signedCookies['usersid'] || {}
+  res.on('header', function(){
+    res.cookie('usersid', req.session, { signed: true });
+  });
+  next();
+});
+app.use(function(req, res, next){
+  res.locals.session = req.session;
+  next();
+})
+
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 

@@ -60,6 +60,8 @@ exports.start = function(req, res){
 exports.createuser = function(req, res){
   carepack.createUser(req, res, function(message){
     console.log(message)
+    req.session['user'] = req.session.user || {}
+    req.session.user.firstname = req.body.firstname
     res.render('index', {title:'Welcome', alert:'A User created', messages:[]});
   })
 }
