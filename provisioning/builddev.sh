@@ -13,7 +13,8 @@ sudo apt-get -y install git \
                    python-yaml \
                    python-jinja2 \
                    python-paramiko \
-                   software-properties-common
+                   software-properties-common \
+                   python-setuptools
 
 INSTALL_TYPE="DirectPlusCarePacks"
 
