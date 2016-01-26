@@ -1,5 +1,5 @@
 [![Stories in Ready](https://badge.waffle.io/vaibhavb/directinabox.png?label=ready)](https://waffle.io/vaibhavb/directinabox)
-Direct In A Box
+Care Pack
 ===============
 
 A complete opensource Direct HISP and a modern end user client which embodies Bluebutton+, provides HL7 connectors and can be used and administered out of the box.
