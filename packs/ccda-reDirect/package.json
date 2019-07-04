@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "description": "Transfer C-CDA attachments from IMAP --> HTTP POST",
   "author": "Josh Mandel <joshua.mandel@childrens.harvard.edu>",
-  "scripts":{
-    "start": "node ./launch.js"
+  "scripts": {
+    "start": "node ./launch.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "mailparser": "*",
@@ -13,9 +15,10 @@
     "optimist": "*",
     "request": "*",
     "async": "*",
-    "url-template": "*"
+    "url-template": "*",
+    "snyk": "^1.189.0"
   },
-  "devDependencies": {
-  },
-  "engine": "node >= 0.6.0"
+  "devDependencies": {},
+  "engine": "node >= 0.6.0",
+  "snyk": true
 }
