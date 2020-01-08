@@ -3,7 +3,7 @@
   "main": "",
   "version": "0.0.1",
   "dependencies": {
-    "mongoose": "latest",
+    "mongoose": "5.7.5",
     "express": "~3.4.8",
     "nodemailer": "~1.0.4",
     "nodemailer-smtp-transport": "~0.1.12"
