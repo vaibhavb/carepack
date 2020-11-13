@@ -5,7 +5,7 @@
   "dependencies": {
     "mongoose": "latest",
     "express": "~3.4.8",
-    "nodemailer": "~1.0.4",
+    "nodemailer": "~6.4.16",
     "nodemailer-smtp-transport": "~0.1.12"
   }
 }
