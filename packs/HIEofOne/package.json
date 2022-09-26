@@ -3,12 +3,16 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
-    "express": "3.4.8",
+    "express": "4.16.0",
     "jade": "*",
     "request": "*",
-    "twilio": "~1.5.0"
-  }
+    "twilio": "~3.41.0",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
