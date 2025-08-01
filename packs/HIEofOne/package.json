@@ -9,6 +9,6 @@
     "express": "3.4.8",
     "jade": "*",
     "request": "*",
-    "twilio": "~1.5.0"
+    "twilio": "~3.41.0"
   }
 }
